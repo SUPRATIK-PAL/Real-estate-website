@@ -1,8 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import {FaSearch } from 'react-icons/fa'
+import {useSelector} from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 
 const Header = () => {
+  const navigate = useNavigate();
+  const {currentUser}  = useSelector(state => state.user);
+  const imageClick = () => {
+    navigate('/profile');
+  }
   return (
     <div>
       <header className='bg-slate-200 shadow-md'>
@@ -36,9 +43,16 @@ const Header = () => {
               About
             </li>
           </Link>
-          <Link to='/sign-in'>
+          {
+            currentUser? 
+            (<img className='rounded-full h-7 w-7 object-cover cursor-pointer' src={currentUser.avatar} alt="" onClick={imageClick}/>)
+            : (
+              <Link to='/sign-in'>
               <li className=' text-slate-700 hover:underline'> Sign in</li>
           </Link>
+            )
+          }
+          
         </ul>
       </div>
     </header>
