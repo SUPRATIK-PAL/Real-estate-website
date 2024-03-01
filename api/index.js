@@ -4,10 +4,12 @@ import dotenv from 'dotenv';
 dotenv.config();
 import userRouter from "./routes/user.route.js"
 import authRouter from "./routes/auth.route.js"
+import cookieParser from 'cookie-parser';
 
 const app = express();
 
 app.use(express.json());
+app.use(cookieParser());
 
 mongoose.connect(process.env.MONGO_URI).then(() => console.log("db is connected")).catch((err) => {
     console.log("db connection failed");
