@@ -11,7 +11,6 @@ import {
   FaBath,
   FaBed,
   FaChair,
-  FaMapMarkedAlt,
   FaMapMarkerAlt,
   FaParking,
   FaShare,
@@ -88,8 +87,8 @@ const Listing = () => {
             Link copied!
           </p>
         )}
-        <div className='flex flex-col max-w-4xl mx-auto p-3 my-7 gap-4'>
-          <p className='text-2xl font-semibold'>
+        <div className='flex flex-col max-w-full mx-auto p-3 my-7 gap-4'>
+          <p className='text-3xl text-left font-semibold'>
             {listing.name} - ${' '}
             {listing.offer
               ? listing.discountPrice.toLocaleString('en-US')

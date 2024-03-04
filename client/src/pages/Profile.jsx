@@ -210,12 +210,12 @@ const Profile = () => {
         />
         <button
           disabled={loading}
-          className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:opacity-95 disabled:opacity-80'
+          className='bg-slate-700 text-white rounded-lg p-3 uppercase hover:bg-slate-900 transition duration-200 disabled:opacity-80'
         >
           {loading ? 'Loading...' : 'Update'}
         </button>
         <Link
-          className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:opacity-95'
+          className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:bg-green-900 transition duration-200'
           to={'/create-listing'}
         >
           Create Listing
@@ -224,11 +224,11 @@ const Profile = () => {
       <div className='flex justify-between mt-5'>
         <span
           onClick={handleDeleteUser}
-          className='text-red-700 cursor-pointer'
+          className='bg-red-700 text-white p-3 rounded-lg text-center transition duration-200 cursor-pointer hover:bg-red-900'
         >
           Delete account
         </span>
-        <span onClick={handleSignOut} className='text-red-700 cursor-pointer'>
+        <span onClick={handleSignOut} className='bg-red-700 text-white p-3 rounded-lg text-center transition duration-200 cursor-pointer hover:bg-red-900'>
           Sign out
         </span>
       </div>
@@ -237,7 +237,7 @@ const Profile = () => {
       <p className='text-green-700 mt-5'>
         {updateSuccess ? 'User is updated successfully!' : ''}
       </p>
-      <button onClick={handleShowListings} className='text-green-700 w-full'>
+      <button onClick={handleShowListings} className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:bg-green-900 transition duration-200'>
         Show Listings
       </button>
       <p className='text-red-700 mt-5'>
@@ -262,21 +262,21 @@ const Profile = () => {
                 />
               </Link>
               <Link
-                className='text-slate-700 font-semibold  hover:underline truncate flex-1'
+                className=' text-slate-700 hover:text-slate-400 transition duration-200 font-semibold truncate flex-1'
                 to={`/listing/${listing._id}`}
               >
                 <p>{listing.name}</p>
               </Link>
 
-              <div className='flex flex-col item-center'>
+              <div className='flex gap-5 item-center'>
                 <button
                   onClick={() => handleListingDelete(listing._id)}
-                  className='text-red-700 uppercase'
+                  className='bg-red-700 text-white p-3 rounded-lg uppercase text-center hover:bg-red-900 transition duration-200'
                 >
                   Delete
                 </button>
                 <Link to={`/update-listing/${listing._id}`}>
-                  <button className='text-green-700 uppercase'>Edit</button>
+                  <button className='bg-green-700 text-white p-3 rounded-lg uppercase text-center hover:bg-green-900 transition duration-200'>Edit</button>
                 </Link>
               </div>
             </div>
