@@ -71,7 +71,7 @@ const Header = () => {
             (<img className='rounded-full h-7 w-7 object-cover cursor-pointer' src={currentUser.avatar} alt="" onClick={imageClick}/>)
             : (
               <Link to='/sign-in'>
-              <li className=' text-slate-700 hover:underline'> Sign in</li>
+              <li className=' text-slate-700 hover:text-slate-400 transition duration-150'> Sign in</li>
           </Link>
             )
           }
